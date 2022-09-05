@@ -2,7 +2,6 @@ public class StepTracker {
     int month, day, numberOfStep;
     int[][] stepsInDay = new int[12][31];
     Converter Convert = new Converter();
-    int goalStep=10000;
     StepTracker() {
         int month;
         int day;
@@ -43,23 +42,22 @@ public class StepTracker {
         Convert.calculationKm(sumStep);
         Convert.calculationCalorie(sumStep);
     }
-        void bestSeries (int month){
-            int series = 0;
-            int bestSer = 0;
-            for (int i = 0; i < stepsInDay[month].length; i++) {
-                if (stepsInDay[month][i] >= goalStep) {
-                    series++;
-                    if (series > bestSer) {
-                        bestSer = series;
-                    }
-                } else {
-                    series = 0;
+    void bestSeries (int month, int goalStep){
+        int series = 0;
+        int bestSer = 0;
+        for (int i = 0; i < stepsInDay[month].length; i++) {
+            if (stepsInDay[month][i] >= goalStep) {
+                series++;
+                if (series > bestSer) {
+                    bestSer = series;
                 }
+            } else {
+                series = 0;
             }
-            System.out.println("Ваша лучшая серия составила: " + bestSer);
         }
-        void newGoalStep ( int goalStep){
-        goalStep=goalStep;
-        }
+        System.out.println("Ваша лучшая серия составила: " + bestSer);
     }
-
+    void newGoalStep ( int goalStep){
+        goalStep=goalStep;
+    }
+}

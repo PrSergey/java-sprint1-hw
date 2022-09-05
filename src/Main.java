@@ -5,7 +5,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int userInput = 1;
         int month, day, numberOfStep;
-        int goalStep;
+        int goalStep=10000;
         StepTracker StepTracker = new StepTracker();
 
         while (userInput != 0) {
@@ -31,14 +31,18 @@ public class Main {
                 month = scanner.nextInt();
                 if ((month > -1) && (month < 12)) {
                     StepTracker.statisticsMonth(month);
-                    StepTracker.bestSeries(month);
+                    StepTracker.bestSeries(month, goalStep);
                 } else {
                     System.out.println("Введен некорректный месяц");
                 }
             } else if (userInput == 3) {
                 System.out.println("Введите новую цель по количеству шагов");
                 goalStep = scanner.nextInt();
-                StepTracker.newGoalStep(goalStep);
+                if(goalStep>0) {
+                    StepTracker.newGoalStep(goalStep);
+                }else{
+                    System.out.println("Введены некорректные данные");
+                }
             } else if (userInput == 4) {
                 System.out.println("Выход");
                 break;
@@ -58,4 +62,3 @@ public class Main {
 
     }
 }
-
