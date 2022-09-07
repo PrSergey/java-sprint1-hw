@@ -6,7 +6,6 @@ public class Converter {
     }
     void calculationCalorie (int sumStep) {
         double sumKcal =sumStep*50/1000;
-        String resultKcal = String.format("%.3f", sumKcal);
         System.out.println("За месяц вы сожгли " + sumKcal + " килокалорий");
     }
 }

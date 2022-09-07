@@ -43,7 +43,7 @@ public class Main {
                 }else{
                     System.out.println("Введены некорректные данные");
                 }
-            } else if (userInput == 4) {
+            } else if (userInput == 0) {
                 System.out.println("Выход");
                 break;
 
@@ -58,7 +58,7 @@ public class Main {
         System.out.println("1 - Ввести количество шагов");
         System.out.println("2 - Получить статистику за месяц");
         System.out.println("3 - Изменить цель по количеству шагов");
-        System.out.println("4 - Выйти из приложения");
+        System.out.println("0 - Выйти из приложения");
 
     }
 }
